@@ -76,7 +76,7 @@ section.
 It should just work, unless you have existing `session-created` tmux hooks.
 
 If this applies, you need to specify an unused index in the `session-created`
-array using the `@tmux-nvr-hook-index` option. For example,
+array using the `@tmux-nvr-hook-index` option in `tmux.conf`. For example,
 
     set -g @tmux-nvr-hook-index 42
 
