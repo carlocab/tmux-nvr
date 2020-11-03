@@ -110,7 +110,7 @@ packaged zsh plugin.
 
 For bug reports or questions, please file an issue [here](https://github.com/carlocab/tmux-nvr/issues).
 
-tmux-nvr may behave inappropriately if you script the creation of several tmux
+tmux-nvr may behave unpredictably if you script the creation of several tmux
 sessions at a time. If this causes problems, please file an issue using the
 link above.
 
