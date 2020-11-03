@@ -48,13 +48,22 @@ array using the `@tmux-nvr-hook-index` option. For example,
 
 ## nvr-tmux
 
-**nvr-tmux** is an executable found in the `bin` directory. It automates
-switching to `nvim` whenever there is an existing instance of `nvim` open in
-your current session.
+`nvr-tmux` is an executable found in the `bin` directory. It automates
+switching to `nvim` whenever there is an existing instance of `nvim` connected
+to `NVIM_LISTEN_ADDRESS`.
 
 It passes all its arguments to `nvr`, so it can be used in exactly the same way.
+For example, to edit a file in an existing instance of `nvim` using `nvr`, you
+would run
 
-To use it, either add the `bin` directory to your `PATH`, or symlink
+    nvr file.txt
+
+This opens `file.txt` in `nvim`, but leaves you in the shell you called `nvr`
+from. To immediately switch back to `nvim` as it opens the file, run
+
+    nvr-tmux file.txt
+
+To use `nvr-tmux`, either add the `bin` directory to your `PATH`, or symlink
 `bin/nvr-tmux` to a directory in your `PATH`.
 
 ## Miscellaneous
