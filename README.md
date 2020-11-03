@@ -39,7 +39,12 @@ Add the following line to your `tmux.conf`.
 
 ## Usage
 
-It should just work.
+It should just work, unless you have existing `session-created` tmux hooks.
+
+If this applies, you will need to specify an unussed index in the `session-created`
+hook array using the `@tmux-nvr-hook-index` option. For example,
+
+    set -g @tmux-nvr-hook-index 42
 
 ## Miscellaneous
 
