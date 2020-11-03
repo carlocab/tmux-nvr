@@ -83,3 +83,7 @@ Here are improvements I hope to be able to work on:
 4. Vim-compatibility
 
 Pull requests are welcome.
+
+## Related Projects
+
+https://github.com/daplay/tmux_nvr
