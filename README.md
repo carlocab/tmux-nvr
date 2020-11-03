@@ -103,6 +103,10 @@ packaged zsh plugin.
 
 For bug reports or questions, please file an issue [here](https://github.com/carlocab/tmux-nvr/issues).
 
+tmux-nvr may behave inappropriately if you script the creation of several tmux
+sessions at a time. If this causes problems, please file an issue using the
+link above.
+
 ### Wishlist
 Here are improvements I hope to be able to work on:
 1. Window-specific nvim instances
