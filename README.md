@@ -41,6 +41,8 @@ if [ -n "$TMUX" ]; then
 fi
 ```
 
+### Optional Zsh Plugin Installation with OhMyZsh
+
 If you use [OhMyZsh](https://ohmyz.sh), instead of using the snippet above, you
 can use the packaged zsh plugin. First, symlink the tmux-nvr directory into
 `$ZSH_CUSTOM` using
