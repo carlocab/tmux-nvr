@@ -15,4 +15,5 @@ get_tmux_option() {
 	fi
 }
 
-tmux set-hook -g session-created "run-shell $SCRIPTS_DIR/nvim-listen.sh"
+hook_index="[$(get_tmux_option @tmux-nvr-hook-index 0)]"
+tmux set-hook -g session-created"$hook_index" "run-shell $SCRIPTS_DIR/nvim-listen.sh"
