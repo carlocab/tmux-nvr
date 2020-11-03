@@ -115,11 +115,12 @@ sessions at a time. If this causes problems, please file an issue using the
 link above.
 
 ### Wishlist
-Here are improvements I hope to be able to work on:
+Here are improvements I hope to be able to work on (in no particular order):
 1. Window-specific nvim instances
 2. `nvr-tmux` backwards-compatibility
 3. Simpler installation procedure
 4. Vim-compatibility
+5. tmux-nvr usage demo
 
 Pull requests are welcome.
 
