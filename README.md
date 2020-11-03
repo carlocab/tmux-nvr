@@ -14,6 +14,9 @@ each of your sessions.
 `NVIM_LISTEN_ADDRESS` so that `nvr` will always refer to an nvim process in your
 current session.
 
+tmux-nvr also provides an executable `nvr-tmux`, which automates switching to
+the nvim process controlled by `nvr`.
+
 ## Requirements
 
 - tmux
