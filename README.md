@@ -46,6 +46,17 @@ array using the `@tmux-nvr-hook-index` option. For example,
 
     set -g @tmux-nvr-hook-index 42
 
+## nvr-tmux
+
+**nvr-tmux** is an executable found in the `bin` directory. It automates
+switching to `nvim` whenever there is an existing instance of `nvim` open in
+your current session.
+
+It passes all its arguments to `nvr`, so it can be used in exactly the same way.
+
+To use it, either add the `bin` directory to your `PATH`, or symlink
+`bin/nvr-tmux` to a directory in your `PATH`.
+
 ## Miscellaneous
 
 For bug reports or questions, please file an issue [here](https://github.com/carlocab/tmux-nvr/issues).
