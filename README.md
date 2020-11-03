@@ -50,6 +50,9 @@ Add the following line to your `tmux.conf`.
 
     run-shell ~/path/to/tmux-nvr/nvr.tmux
 
+Then, follow the instructions for your `*rc` files in the previous
+section.
+
 ## Usage
 
 It should just work, unless you have existing `session-created` tmux hooks.
