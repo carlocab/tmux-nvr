@@ -13,3 +13,34 @@ each of your sessions.
 **tmux-nvr** automates the creation of session-specific values for
 `NVIM_LISTEN_ADDRESS` so that `nvr` will always refer to an nvim process in your
 current session.
+
+## Requirements
+
+- tmux
+- Neovim
+- neovim-remote
+
+## Installation Using tpm
+
+Install tmux-nvr using the [tmux plugin manager](https://github.com/tmux-plugins/tpm).
+Add the following line to your `tmux.conf`.
+
+    set -g @plugin 'carlocab/tmux-nvr'
+
+## Manual Installation
+
+Clone this repository using
+
+    git clone https://github.com/carlocab/tmux-nvr ~/path/to/tmux-nvr
+
+Add the following line to your `tmux.conf`.
+
+    run-shell ~/path/to/tmux-nvr/nvr.tmux
+
+## Usage
+
+It should just work.
+
+## Miscellaneous
+
+For bug reports or questions, please file an issue [here](https://github.com/carlocab/tmux-nvr/issues).
