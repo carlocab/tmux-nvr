@@ -43,14 +43,14 @@ fi
 
 If you use [OhMyZsh](https://ohmyz.sh), instead of using the snippet above, you
 can use the packaged zsh plugin. First, symlink the tmux-nvr directory into
-`$ZSH_CUSTOM` using[^1]
+`$ZSH_CUSTOM` using
 
     ln -s ~/.tmux/plugins/tmux-nvr ~ZSH_CUSTOM/plugins
 
-[^1]: Your tmux plugins may be installed in a different location. One can
+Your tmux plugins may be installed in a different location. One can
 typically verify this location using `echo $TMUX_PLUGIN_MANAGER_PATH`.
 
-Then, add `tmux-nvr` to the `plugins` array in your `zshrc`.
+Finally, add `tmux-nvr` to the `plugins` array in your `zshrc`.
 
     plugins=($plugins tmux-nvr)
 
