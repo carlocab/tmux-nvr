@@ -1,6 +1,6 @@
 # tmux-nvr
-A [tmux](https://tmux.github.io) plugin for creating session-specific
-[Neovim](https://neovim.io) instances using
+A [tmux](https://tmux.github.io) plugin for using session-specific
+[Neovim](https://neovim.io) instances with
 [neovim-remote](https://github.com/mhinz/neovim-remote)
 
 ---
@@ -65,6 +65,8 @@ from. To immediately switch back to `nvim` as it opens the file, run
 
 To use `nvr-tmux`, either add the `bin` directory to your `PATH`, or symlink
 `bin/nvr-tmux` to a directory in your `PATH`.
+
+**nvr-tmux requires tmux 3.2 or above.**
 
 ## Miscellaneous
 
