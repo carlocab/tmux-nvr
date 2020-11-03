@@ -80,6 +80,9 @@ from. To immediately switch the current pane to `nvim` as it opens the file, run
 
     nvr-tmux file.txt
 
+`nvr-tmux` can serve as a drop-in replacement for `nvr`, even if you are not
+running tmux.
+
 To use `nvr-tmux`, either add the `bin` directory to your `PATH`, or symlink
 `bin/nvr-tmux` to a directory in your `PATH`.
 
