@@ -31,6 +31,8 @@ Add the following line to your `tmux.conf`.
 
     set -g @plugin 'carlocab/tmux-nvr'
 
+Press `prefix` + <kbd>I</kbd> (capital i, as in **I**nstall) to fetch the plugin.
+
 Next, add this snippet to your `zshrc` or `bashrc`.
 
 ```bash
@@ -41,9 +43,12 @@ fi
 
 If you use [OhMyZsh](https://ohmyz.sh), instead of using the snippet above, you
 can use the packaged zsh plugin. First, symlink the tmux-nvr directory into
-`$ZSH_CUSTOM` using
+`$ZSH_CUSTOM` using[^1]
 
     ln -s ~/.tmux/plugins/tmux-nvr ~ZSH_CUSTOM/plugins
+
+[^1]: Your tmux plugins may be installed in a different location. One can
+typically verify this location using `echo $TMUX_PLUGIN_MANAGER_PATH`.
 
 Then, add `tmux-nvr` to the `plugins` array in your `zshrc`.
 
