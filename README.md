@@ -20,7 +20,7 @@ current session.
 - Neovim
 - neovim-remote
 
-## Installation Using tpm
+## Installation Using TPM
 
 Install tmux-nvr using the [tmux plugin manager](https://github.com/tmux-plugins/tpm).
 Add the following line to your `tmux.conf`.
