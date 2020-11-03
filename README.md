@@ -62,7 +62,7 @@ would run
     nvr file.txt
 
 This opens `file.txt` in `nvim`, but leaves you in the shell you called `nvr`
-from. To immediately switch back to `nvim` as it opens the file, run
+from. To immediately switch the current pane to `nvim` as it opens the file, run
 
     nvr-tmux file.txt
 
@@ -80,5 +80,6 @@ Here are improvements I hope to be able to work on:
 1. Window-specific nvim instances
 2. `nvr-tmux` backwards-compatibility
 3. Simpler installation of `nvr-tmux`
+4. Vim-compatibility
 
 Pull requests are welcome.
