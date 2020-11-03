@@ -5,7 +5,7 @@ A [tmux](https://tmux.github.io) plugin for creating session-specific
 
 ---
 
-neovim-remote allows you to controll nvim processes from the shell using `nvr`.
+neovim-remote allows you to control nvim processes from the shell using `nvr`.
 You might then want `nvr` to control nvim processes in your current tmux session,
 rather than another one. This requires setting a unique `NVIM_LISTEN_ADDRESS` for
 each of your sessions.
