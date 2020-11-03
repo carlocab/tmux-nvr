@@ -30,6 +30,16 @@ Add the following line to your `tmux.conf`.
 
     set -g @plugin 'carlocab/tmux-nvr'
 
+Next, add this snippet to your `zshrc` or `bashrc`.
+
+```bash
+if [ -n "$TMUX" ]; then
+    eval "$(tmux show-environment -s NVIM_LISTEN_ADDRESS)"
+else
+    export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
+fi
+```
+
 ## Manual Installation
 
 Clone this repository using
