@@ -1,2 +1,2 @@
 # tmux-nvr
-tmux plugin for session-specific Neovim instances using neovim-remote
+A [tmux](https://tmux.github.io) plugin for session-specific [Neovim](https://neovim.io) instances using [neovim-remote](https://github.com/mhinz/neovim-remote)
