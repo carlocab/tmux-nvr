@@ -36,10 +36,20 @@ Next, add this snippet to your `zshrc` or `bashrc`.
 ```bash
 if [ -n "$TMUX" ]; then
     eval "$(tmux show-environment -s NVIM_LISTEN_ADDRESS)"
-else
-    export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 fi
 ```
+
+If you use [OhMyZsh](https://ohmyz.sh), instead of using the snippet above, you
+can use the packaged zsh plugin. First, symlink the tmux-nvr directory into
+`$ZSH_CUSTOM` using
+
+    ln -s ~/.tmux/plugins/tmux-nvr ~ZSH_CUSTOM/plugins
+
+Then, add `tmux-nvr` to the `plugins` array in your `zshrc`.
+
+    plugins=($plugins tmux-nvr)
+
+The plugin will also add `nvr-tmux` to your `PATH`.
 
 ## Manual Installation
 
@@ -84,7 +94,8 @@ from. To immediately switch the current pane to `nvim` as it opens the file, run
 running tmux.
 
 To use `nvr-tmux`, either add the `bin` directory to your `PATH`, or symlink
-`bin/nvr-tmux` to a directory in your `PATH`.
+`bin/nvr-tmux` to a directory in your `PATH`. This is done automatically by the
+packaged zsh plugin.
 
 **nvr-tmux requires tmux 3.2 or above.**
 
