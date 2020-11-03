@@ -1,5 +1,6 @@
 # tmux-nvr.plugin.zsh
 # Sets NVIM_LISTEN_ADDRESS and adds `nvr-tmux` to path
+# TODO add nvr-tmux to PATH only if tmux version is at least 3.2
 
 # Standardised $0 handling.
 # See https://github.com/zdharma/Zsh-100-Commits-Club/blob/master/Zsh-Plugin-Standard.adoc#1-standardized-0-handling
