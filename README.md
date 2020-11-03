@@ -76,7 +76,9 @@ To use `nvr-tmux`, either add the `bin` directory to your `PATH`, or symlink
 For bug reports or questions, please file an issue [here](https://github.com/carlocab/tmux-nvr/issues).
 
 ### Wishlist
-Here are issues I hope to be able to work on:
+Here are improvements I hope to be able to work on:
 1. Window-specific nvim instances
 2. `nvr-tmux` backwards-compatibility
 3. Simpler installation of `nvr-tmux`
+
+Pull requests are welcome.
