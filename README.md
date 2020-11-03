@@ -20,6 +20,7 @@ the nvim process controlled by `nvr`.
 ## Requirements
 
 - tmux
+    * `nvr-tmux` requires tmux 3.2+
 - Neovim
 - neovim-remote
 
@@ -92,7 +93,7 @@ For bug reports or questions, please file an issue [here](https://github.com/car
 Here are improvements I hope to be able to work on:
 1. Window-specific nvim instances
 2. `nvr-tmux` backwards-compatibility
-3. Simpler installation of `nvr-tmux`
+3. Simpler installation procedure
 4. Vim-compatibility
 
 Pull requests are welcome.
