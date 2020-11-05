@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# TODO handle errors when `nvr` is not on `PATH`
+# TODO handle errors:
+#   1. when `nvr` is not on `PATH`
+#   2. in case calls to `nvr` and `tmux` fail
 
 # Wrapper for `nvr` Python script that checks to see if the session/window nvim
 # server is running, and switches to that instance of nvim if it is.
