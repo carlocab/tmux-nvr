@@ -10,6 +10,8 @@ if [[ -n "$TMUX" ]]; then
     # Use environment variable, otherwise fall back to nvr default
     nvimsock="${NVIM_LISTEN_ADDRESS:-/tmp/nvimsocket}"
     # Check for running nvim servers using nvr
+    # Prefer using `nvr` over [[ -S "$nvimsock" ]] to guarantee that anything
+    # found at $nvimsock is in fact an nvim socket, rather than something else
     for sock in $(command nvr --serverlist); do
         # Check that we've found the right nvim server
         if [[ "$sock" = "$nvimsock" ]]; then
