@@ -10,6 +10,10 @@
 # If in tmux, set `NVIM_LISTEN_ADDRESS` using tmux-nvr
 if [ -n "$TMUX" ]; then
     eval "$(command tmux show-environment -s NVIM_LISTEN_ADDRESS)"
+else
+    # -m 700 sets permissions so that only you have access to this directory
+    mkdir -p -m 700 /tmp/nvr
+    export NVIM_LISTEN_ADDRESS=/tmp/nvr/nvimsocket
 fi
 
 # Check if `nvr-tmux` is in $path, otherwise add it

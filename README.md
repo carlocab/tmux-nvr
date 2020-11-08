@@ -38,10 +38,16 @@ Next, add this snippet to your `zshrc` or `bashrc`.
 ```bash
 if [ -n "$TMUX" ]; then
     eval "$(tmux show-environment -s NVIM_LISTEN_ADDRESS)"
+else
+    export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 fi
 ```
 
-### Optional Zsh Plugin Installation with OhMyZsh
+The `else` statement is optional. Nevertheless, it is a good idea to include it.
+`nvr` [is known to produce errors](https://github.com/mhinz/neovim-remote/issues/134#issuecomment-565840645)
+when it is used without this being set.
+
+### Optional: Zsh Plugin Installation with OhMyZsh
 
 If you use [OhMyZsh](https://ohmyz.sh), instead of using the snippet above, you
 can use the packaged zsh plugin. First, symlink the tmux-nvr directory into
