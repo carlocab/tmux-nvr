@@ -44,8 +44,7 @@ fi
 ```
 
 The `else` statement is optional. Nevertheless, it is a good idea to include it.
-`nvr` [is known to produce errors](https://github.com/mhinz/neovim-remote/issues/134#issuecomment-565840645)
-when it is used without this being set.
+`nvr` is known to produce errors [when it is used without this being set](https://github.com/mhinz/neovim-remote/issues/134#issuecomment-565840645).
 
 ### Optional: Zsh Plugin Installation with OhMyZsh
 
