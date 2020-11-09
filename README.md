@@ -62,7 +62,8 @@ Finally, add `tmux-nvr` to the `plugins` array in your `zshrc`.
 
     plugins=($plugins tmux-nvr)
 
-The plugin will also add `nvr-tmux` to your `PATH`.
+The plugin will also add `nvr-tmux` to your `PATH`, if your version of tmux is
+new enough.
 
 ## Manual Installation
 
