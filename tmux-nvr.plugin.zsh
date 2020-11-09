@@ -1,6 +1,5 @@
 # tmux-nvr.plugin.zsh
 # Sets NVIM_LISTEN_ADDRESS and adds `nvr-tmux` to path
-# TODO add nvr-tmux to PATH only if tmux version is at least 3.2
 
 # Standardised $0 handling.
 # See https://github.com/zdharma/Zsh-100-Commits-Club/blob/master/Zsh-Plugin-Standard.adoc#1-standardized-0-handling
@@ -16,10 +15,18 @@ else
     export NVIM_LISTEN_ADDRESS=/tmp/nvr/nvimsocket
 fi
 
-# Check if `nvr-tmux` is in $path, otherwise add it
+# Strip all but the digits from `tmux -V`
+tmux_version_digits="$(tmux -V 2> /dev/null | sed 's/[^0-9]*//g')"
+tmux_compat_digits="32"
+
+# Check if `nvr-tmux` is in $path
 if (( $+commands[nvr-tmux] )); then
     return 0
-else
+# Add `nvr-tmux` to path if tmux is new enough
+elif [[ "tmux_version_digits" -ge "$tmux_compat_digits" ]]; then
     path+=("${0:h}/bin")
     export PATH
 fi
+
+# Don't leave temporary variables lying around
+unset tmux_version_digits tmux_compat_digits
