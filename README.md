@@ -87,6 +87,10 @@ array using the `@tmux-nvr-hook-index` option in `tmux.conf`. For example,
 
     set -g @tmux-nvr-hook-index 42
 
+This is set to `0` by default. Thus, instead of setting `@tmux-nvr-hook-index`,
+you may alternatively assign your `session-created` hooks to indices other than
+`0`.
+
 ## nvr-tmux
 
 `nvr-tmux` is an executable found in the `bin` directory. It automates
