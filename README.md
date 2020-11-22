@@ -80,16 +80,11 @@ section.
 
 ## Usage
 
-It should just work, unless you have existing `session-created` tmux hooks.
+It should just work.
 
-If this applies, you need to specify an unused index in the `session-created`
-array using the `@tmux-nvr-hook-index` option in `tmux.conf`. For example,
-
-    set -g @tmux-nvr-hook-index 42
-
-This is set to `0` by default. Thus, instead of setting `@tmux-nvr-hook-index`,
-you may alternatively assign your `session-created` hooks to indices other than
-`0`.
+An earlier version of tmux-nvr required setting a `@tmux-nvr-hook-index` option
+to avoid overriding pre-defined `session-created` hooks. This is no longer
+necessary.
 
 ## nvr-tmux
 
@@ -116,6 +111,15 @@ To use `nvr-tmux`, either add the `bin` directory to your `PATH`, or symlink
 packaged zsh plugin.
 
 **nvr-tmux requires tmux 3.2 or above.**
+
+### Why not use a shell function?
+
+`nvr-tmux` has been most useful for me as a git editor. This is described in the
+neovim-remote README [here](https://github.com/mhinz/neovim-remote#typical-use-cases).
+`git` does not recognise shell functions as editors, so any shell function you
+use will need to be turned into an executable script.
+
+I've saved you the trouble of doing that by including `nvr-tmux`.
 
 ## Miscellaneous
 
