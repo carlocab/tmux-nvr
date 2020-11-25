@@ -114,12 +114,12 @@ packaged zsh plugin.
 
 ### Why not use a shell function?
 
-`nvr-tmux` has been most useful for me as a git editor. This is described in the
-neovim-remote README [here](https://github.com/mhinz/neovim-remote#typical-use-cases).
+`nvr-tmux` has been most useful for me as a git editor, as described in the
+[neovim-remote README](https://github.com/mhinz/neovim-remote#typical-use-cases).
 `git` does not recognise shell functions as editors, so any shell function you
-use will need to be turned into an executable script.
+use for this purpose will need to be turned into an executable script.
 
-I've saved you the trouble of doing that by including `nvr-tmux`.
+I've saved you the trouble of doing that with `nvr-tmux`.
 
 ## Miscellaneous
 
