@@ -24,7 +24,7 @@ if (( $+commands[nvr-tmux] )); then
     return 0
 # Add `nvr-tmux` to path if tmux is new enough
 elif [[ "tmux_version_digits" -ge "$tmux_compat_digits" ]]; then
-    path+=("${0:h}/bin")
+    path+="${0:h}/bin"
     export PATH
 fi
 
