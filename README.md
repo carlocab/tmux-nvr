@@ -19,7 +19,7 @@ the nvim process controlled by `nvr`.
 
 ## Requirements
 
-- tmux
+- tmux 3.0+
     * `nvr-tmux` requires tmux 3.2+
 - Neovim
 - neovim-remote
