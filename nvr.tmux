@@ -15,4 +15,5 @@ get_tmux_option() {
     fi
 }
 
+tmux set-option -ga update-environment 'NVIM_LISTEN_ADDRESS'
 tmux set-hook -ag session-created "run-shell $SCRIPTS_DIR/nvim-listen.sh"
