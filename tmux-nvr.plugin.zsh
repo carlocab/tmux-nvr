@@ -7,9 +7,7 @@
 0="${${(M)0:#/*}:-$PWD/$0}"
 
 # If in tmux, set `NVIM_LISTEN_ADDRESS` using tmux-nvr
-if [ -n "$TMUX" ]; then
-    eval "$(command tmux show-environment -s NVIM_LISTEN_ADDRESS)"
-else
+if [ -z "$TMUX" ]; then
     # -m 700 sets permissions so that only you have access to this directory
     mkdir -p -m 700 /tmp/nvr
     export NVIM_LISTEN_ADDRESS=/tmp/nvr/nvimsocket
