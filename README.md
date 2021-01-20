@@ -36,14 +36,12 @@ Press `prefix` + <kbd>I</kbd> (capital i, as in **I**nstall) to fetch the plugin
 Next, add this snippet to your `zshrc` or `bashrc`.
 
 ```bash
-if [ -n "$TMUX" ]; then
-    eval "$(tmux show-environment -s NVIM_LISTEN_ADDRESS)"
-else
+if [ -z "$TMUX" ]; then
     export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 fi
 ```
 
-The `else` statement is optional. Nevertheless, it is a good idea to include it.
+The statement is optional. Nevertheless, it is a good idea to include it.
 `nvr` is known to produce errors [when it is used without this being set](https://github.com/mhinz/neovim-remote/issues/134#issuecomment-565840645). You may wish to check the permissions of `/tmp` if you
 are on a multi-user system.
 
