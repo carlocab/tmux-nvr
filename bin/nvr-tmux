@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
-# TODO handle errors:
-#   1. when `nvr` is not on `PATH`
-#   2. in case calls to `nvr` and `tmux` fail
 
 # Wrapper for `nvr` Python script that checks to see if the session/window nvim
 # server is running, and switches to that instance of nvim if it is.
-# Check if tmux is running first
-if [[ -n "$TMUX" ]]; then
+
+if [[ -n "$TMUX" ]] && command -v nvr > /dev/null; then
     # Use environment variable, otherwise fall back to nvr default
     nvimsock="${NVIM_LISTEN_ADDRESS:-/tmp/nvimsocket}"
     # Check for running nvim servers using nvr
