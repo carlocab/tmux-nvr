@@ -15,15 +15,15 @@ else
     export NVIM_LISTEN_ADDRESS=/tmp/nvr/nvimsocket
 fi
 
+# Bail out early if `tmux` is not executable
+(( $+commands[tmux] )) || return 0
+
 # Strip all but the digits from `tmux -V`
-tmux_version_digits="${$(tmux -V 2> /dev/null)//[^0-9]/}"
+tmux_version_digits="${$(command tmux -V 2> /dev/null)//[^0-9]/}"
 tmux_compat_digits="32"
 
-# Check if `nvr-tmux` is in $path
-if (( $+commands[nvr-tmux] )); then
-    return 0
 # Add `nvr-tmux` to path if tmux is new enough
-elif [[ "tmux_version_digits" -ge "$tmux_compat_digits" ]]; then
+if ! (( $+commands[nvr-tmux] )) && [[ "tmux_version_digits" -ge "$tmux_compat_digits" ]]; then
     path+="${0:h}/bin"
     export PATH
 fi
