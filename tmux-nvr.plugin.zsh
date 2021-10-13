@@ -7,7 +7,7 @@
 0="${${(M)0:#/*}:-$PWD/$0}"
 
 # If in tmux, set `NVIM_LISTEN_ADDRESS` using tmux-nvr
-if [ -n "$TMUX" ]; then
+if [[ -n "$TMUX" ]]; then
     eval "$(command tmux show-environment -s NVIM_LISTEN_ADDRESS)"
 else
     # -m 700 sets permissions so that only you have access to this directory
@@ -23,7 +23,7 @@ tmux_version_digits="${$(command tmux -V 2> /dev/null)//[^0-9]/}"
 tmux_compat_digits="32"
 
 # Add `nvr-tmux` to path if tmux is new enough
-if ! (( $+commands[nvr-tmux] )) && [[ "tmux_version_digits" -ge "$tmux_compat_digits" ]]; then
+if ! (( $+commands[nvr-tmux] )) && [[ "$tmux_version_digits" -ge "$tmux_compat_digits" ]]; then
     path+="${0:h}/bin"
     export PATH
 fi
