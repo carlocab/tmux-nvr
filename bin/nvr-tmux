@@ -29,3 +29,8 @@ fi
 
 # Run nvr
 command nvr "$@"
+
+# Switch back to previous window before switching to nvr.
+if [[ -n "${TMUX}" ]]; then
+	command tmux select-window -t'{last}'
+fi
