@@ -3,7 +3,18 @@
 # Wrapper for `nvr` Python script that checks to see if the session/window nvim
 # server is running, and switches to that instance of nvim if it is.
 
+get_window_id_from_pane_id() {
+	pane_id="$1"
+	command tmux list-panes -s -F '#{window_id}' -f "#{m:${pane_id},#{pane_id}}"
+}
+
 if [[ -n "$TMUX" ]] && command -v nvr > /dev/null; then
+	# Keep track of current pane and window IDs to switch back to later.
+	previous_pane_id="${TMUX_PANE}"
+	if [[ -n "${previous_pane_id}" ]]; then
+		previous_window_id="$(get_window_id_from_pane_id "${previous_pane_id}")"
+	fi
+
     # Use environment variable, otherwise fall back to nvr default
     nvimsock="${NVIM_LISTEN_ADDRESS:-/tmp/nvimsocket}"
     # Check for running nvim servers using nvr
@@ -18,7 +29,7 @@ if [[ -n "$TMUX" ]] && command -v nvr > /dev/null; then
                 # Activate the pane containing our nvim server
                 command tmux select-pane -t"$pane_id"
                 # Find the window containing $pane_id
-                window_id="$(command tmux list-panes -s -F '#{window_id}' -f "#{m:$pane_id,#{pane_id}}")"
+                window_id="$(get_window_id_from_pane_id "${pane_id}")"
                 # Activate the window
                 [[ -n "$window_id" ]] && command tmux select-window -t"$window_id"
             fi
@@ -31,6 +42,5 @@ fi
 command nvr "$@"
 
 # Switch back to previous window before switching to nvr.
-if [[ -n "${TMUX}" ]]; then
-	command tmux select-window -t'{last}'
-fi
+[[ -n "${previous_pane_id}" ]] && command tmux select-pane -t"${previous_pane_id}"
+[[ -n "${previous_window_id}" ]] && command tmux select-window -t"${previous_window_id}"
